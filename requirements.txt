@@ -1,7 +1,6 @@
-Download these following extension for the code to work:
-- pandas
-- numpy
-- statsmodels
-- Flask
-- Flask-cors
-- gunicorn
+flask
+flask-cors
+pandas
+numpy
+statsmodels
+gunicorn
