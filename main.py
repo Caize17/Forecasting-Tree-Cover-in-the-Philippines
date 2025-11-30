@@ -1,105 +1,18 @@
-import warnings
-from statsmodels.tools.sm_exceptions import ConvergenceWarning
-warnings.simplefilter("ignore", ConvergenceWarning)
-warnings.simplefilter("ignore", FutureWarning)
-warnings.simplefilter("ignore", UserWarning)
-warnings.simplefilter("ignore", RuntimeWarning)
-
+import os
+import pandas as pd
 from flask import Flask, jsonify
 from flask_cors import CORS
-import pandas as pd
-import numpy as np
-import statsmodels.api as sm
-import os
 
 app = Flask(__name__)
 CORS(app)
 
-df = driver_df = forecast_df = comparison_df = None
+driver_df = pd.read_csv("driver_df.csv") if os.path.exists("driver_df.csv") else pd.DataFrame()
+forecast_df = pd.read_csv("forecast_df.csv") if os.path.exists("forecast_df.csv") else pd.DataFrame()
+comparison_df = pd.read_csv("comparison_df.csv") if os.path.exists("comparison_df.csv") else pd.DataFrame()
 
-DATA_FILES = {
-    "tree": "Annual_Tree_Cover_Analysis_ha.csv",
-    "agri": "agriculture_ha.csv",
-    "log": "log_production.csv",
-    "urban": "urbanization_percentage.csv",
-    "roads": "national_roads.csv",
-    "actual_tree": "Actual_Tree_Cover.csv"
-}
-
-def load_csv_safe(path):
-    if os.path.exists(path):
-        return pd.read_csv(path)
-    return pd.DataFrame()
-
-def prepare_data():
-    global df, driver_df, forecast_df, comparison_df
-
-    tree = load_csv_safe(DATA_FILES["tree"])
-    agri = load_csv_safe(DATA_FILES["agri"])
-    log = load_csv_safe(DATA_FILES["log"])
-    urban = load_csv_safe(DATA_FILES["urban"])
-    roads = load_csv_safe(DATA_FILES["roads"])
-    actual_tree = load_csv_safe(DATA_FILES["actual_tree"])
-
-    if "Region" not in roads.columns:
-        all_regions = tree["Region"].unique()
-        roads = roads.assign(key=1).merge(pd.DataFrame({"Region": all_regions, "key":1}), on="key").drop("key", axis=1)
-
-    df = tree.merge(agri, on=["Region","Year"], how="left")\
-        .merge(log, on=["Region","Year"], how="left")\
-        .merge(urban, on=["Region","Year"], how="left")\
-        .merge(roads, on=["Region","Year"], how="left")
-
-    df = df.rename(columns={
-        "tree_cover_ha": "Tree_Cover",
-        "extrapolated_urbanization_percentage": "Urbanization",
-        "harvested_area_ha": "Agriculture",
-        "log_production_cbm": "Logging",
-        "Total_km": "Roads_km"
-    })
-
-    regions = df["Region"].unique()
-    forecast_years = [2021,2022,2023,2024,2025]
-
-    driver_rows = []
-    forecast_rows = []
-    comparison_rows = []
-
-    for region in regions:
-        reg_df = df[df["Region"]==region].sort_values("Year")
-        exog_vars = ["Agriculture","Logging","Urbanization","Roads_km"]
-
-        X = sm.add_constant(reg_df[exog_vars])
-        y = reg_df["Tree_Cover"]
-        lr_model = sm.OLS(y,X).fit()
-
-        for var in lr_model.params.index:
-            driver_rows.append([region,var,lr_model.params[var],lr_model.pvalues[var]])
-
-        exog = reg_df[exog_vars]
-        sarimax_fit = sm.tsa.SARIMAX(reg_df["Tree_Cover"], order=(1,1,1), seasonal_order=(0,0,0,0), exog=exog).fit(disp=False)
-
-        forecast_exog = np.array([
-            np.polyval(np.polyfit(np.arange(len(reg_df)), reg_df[var].values, 1),
-                    np.arange(len(reg_df), len(reg_df)+len(forecast_years))) 
-            for var in exog_vars
-        ]).T
-
-        tree_forecast = sarimax_fit.get_forecast(steps=len(forecast_years), exog=forecast_exog)
-
-        for i, year in enumerate(forecast_years):
-            forecast_rows.append([region, year, tree_forecast.predicted_mean.iloc[i]])
-            actual_row = actual_tree[(actual_tree["Region"]==region) & (actual_tree["Year"]==year)]
-            if not actual_row.empty:
-                actual_val = actual_row["tree_cover_ha"].values[0]
-                sarimax_val = tree_forecast.predicted_mean.iloc[i]
-                ae = abs(sarimax_val-actual_val)
-                ape = (ae/actual_val)*100
-                comparison_rows.append([region, year, actual_val, sarimax_val, ae, ape])
-
-    driver_df = pd.DataFrame(driver_rows, columns=["Region","Driver","Coefficient","P-value"])
-    forecast_df = pd.DataFrame(forecast_rows, columns=["Region","Year","SARIMAX_Forecast"])
-    comparison_df = pd.DataFrame(comparison_rows, columns=["Region","Year","Actual","SARIMAX_Forecast","AE","APE"]).drop_duplicates(subset=["Region","Year"])
+df = pd.DataFrame()
+if not driver_df.empty:
+    df["Region"] = driver_df["Region"]
 
 @app.route("/api/drivers")
 def api_drivers():
@@ -115,18 +28,21 @@ def api_comparison():
 
 @app.route("/api/regions")
 def api_regions():
-    return jsonify(df["Region"].unique().tolist())
+    if "Region" in df.columns:
+        return jsonify(df["Region"].unique().tolist())
+    return jsonify([])
 
 @app.route("/api/overview")
 def api_overview():
+    if comparison_df.empty or df.empty:
+        return jsonify({})
     return jsonify({
         "overall_mae": float(comparison_df['AE'].mean()),
         "overall_mape": float(comparison_df['APE'].mean()),
         "total_regions": len(df["Region"].unique()),
-        "forecast_years": [2021,2022,2023,2024,2025]
+        "forecast_years": [2021, 2022, 2023, 2024, 2025]
     })
 
 if __name__ == "__main__":
-    prepare_data()
     port = int(os.environ.get("PORT", 5000))
     app.run(debug=False, host='0.0.0.0', port=port)
