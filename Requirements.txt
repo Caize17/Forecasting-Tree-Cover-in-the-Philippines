@@ -1,0 +1,7 @@
+Download these following extension for the code to work:
+- pandas
+- numpy
+- statsmodels
+- Flask
+- Flask-cors
+- gunicorn
