@@ -23,7 +23,7 @@ DATA_FILES = {
     "log": "log_production.csv",
     "urban": "urbanization_percentage.csv",
     "roads": "national_roads.csv",
-    "actual_tree": "actual_tree_cover.csv"
+    "actual_tree": "Actual_Tree_Cover.csv"
 }
 
 def load_csv_safe(path):
