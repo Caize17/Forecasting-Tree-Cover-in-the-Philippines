@@ -1,0 +1,454 @@
+api/forecasts
+
+[
+  {
+    "Region": "Philippines",
+    "SARIMAX_Forecast": 16605430.997057436,
+    "Year": 2021
+  },
+  {
+    "Region": "Philippines",
+    "SARIMAX_Forecast": 16546995.667382233,
+    "Year": 2022
+  },
+  {
+    "Region": "Philippines",
+    "SARIMAX_Forecast": 16488599.597652275,
+    "Year": 2023
+  },
+  {
+    "Region": "Philippines",
+    "SARIMAX_Forecast": 16430230.394575547,
+    "Year": 2024
+  },
+  {
+    "Region": "Philippines",
+    "SARIMAX_Forecast": 16371879.577083709,
+    "Year": 2025
+  },
+  {
+    "Region": "NCR",
+    "SARIMAX_Forecast": 2921.427327126661,
+    "Year": 2021
+  },
+  {
+    "Region": "NCR",
+    "SARIMAX_Forecast": 2919.320418356181,
+    "Year": 2022
+  },
+  {
+    "Region": "NCR",
+    "SARIMAX_Forecast": 2917.281057538044,
+    "Year": 2023
+  },
+  {
+    "Region": "NCR",
+    "SARIMAX_Forecast": 2915.3074524269114,
+    "Year": 2024
+  },
+  {
+    "Region": "NCR",
+    "SARIMAX_Forecast": 2913.3978583309718,
+    "Year": 2025
+  },
+  {
+    "Region": "CAR",
+    "SARIMAX_Forecast": 1231278.98473504,
+    "Year": 2021
+  },
+  {
+    "Region": "CAR",
+    "SARIMAX_Forecast": 1228258.1861159704,
+    "Year": 2022
+  },
+  {
+    "Region": "CAR",
+    "SARIMAX_Forecast": 1225241.6633136892,
+    "Year": 2023
+  },
+  {
+    "Region": "CAR",
+    "SARIMAX_Forecast": 1222228.348508425,
+    "Year": 2024
+  },
+  {
+    "Region": "CAR",
+    "SARIMAX_Forecast": 1219217.4405520437,
+    "Year": 2025
+  },
+  {
+    "Region": "I - Ilocos Region",
+    "SARIMAX_Forecast": 521366.61810370814,
+    "Year": 2021
+  },
+  {
+    "Region": "I - Ilocos Region",
+    "SARIMAX_Forecast": 521073.7479571555,
+    "Year": 2022
+  },
+  {
+    "Region": "I - Ilocos Region",
+    "SARIMAX_Forecast": 520786.32538887113,
+    "Year": 2023
+  },
+  {
+    "Region": "I - Ilocos Region",
+    "SARIMAX_Forecast": 520504.0179918246,
+    "Year": 2024
+  },
+  {
+    "Region": "I - Ilocos Region",
+    "SARIMAX_Forecast": 520226.51364220644,
+    "Year": 2025
+  },
+  {
+    "Region": "II - Cagayan Valley",
+    "SARIMAX_Forecast": 1432388.7273467663,
+    "Year": 2021
+  },
+  {
+    "Region": "II - Cagayan Valley",
+    "SARIMAX_Forecast": 1428292.99357352,
+    "Year": 2022
+  },
+  {
+    "Region": "II - Cagayan Valley",
+    "SARIMAX_Forecast": 1424198.3610699968,
+    "Year": 2023
+  },
+  {
+    "Region": "II - Cagayan Valley",
+    "SARIMAX_Forecast": 1420104.249078912,
+    "Year": 2024
+  },
+  {
+    "Region": "II - Cagayan Valley",
+    "SARIMAX_Forecast": 1416010.3831067567,
+    "Year": 2025
+  },
+  {
+    "Region": "III - Central Luzon",
+    "SARIMAX_Forecast": 884109.0118194742,
+    "Year": 2021
+  },
+  {
+    "Region": "III - Central Luzon",
+    "SARIMAX_Forecast": 882487.4366159784,
+    "Year": 2022
+  },
+  {
+    "Region": "III - Central Luzon",
+    "SARIMAX_Forecast": 880865.8764099597,
+    "Year": 2023
+  },
+  {
+    "Region": "III - Central Luzon",
+    "SARIMAX_Forecast": 879244.319642578,
+    "Year": 2024
+  },
+  {
+    "Region": "III - Central Luzon",
+    "SARIMAX_Forecast": 877622.7636636104,
+    "Year": 2025
+  },
+  {
+    "Region": "Region IV-A - CALABARZON",
+    "SARIMAX_Forecast": 1024180.8231106348,
+    "Year": 2021
+  },
+  {
+    "Region": "Region IV-A - CALABARZON",
+    "SARIMAX_Forecast": 1020964.3743627337,
+    "Year": 2022
+  },
+  {
+    "Region": "Region IV-A - CALABARZON",
+    "SARIMAX_Forecast": 1017747.9256396883,
+    "Year": 2023
+  },
+  {
+    "Region": "Region IV-A - CALABARZON",
+    "SARIMAX_Forecast": 1014531.4769166383,
+    "Year": 2024
+  },
+  {
+    "Region": "Region IV-A - CALABARZON",
+    "SARIMAX_Forecast": 1011315.0281935884,
+    "Year": 2025
+  },
+  {
+    "Region": "Region IV-B - MIMAROPA",
+    "SARIMAX_Forecast": 1747260.2498199851,
+    "Year": 2021
+  },
+  {
+    "Region": "Region IV-B - MIMAROPA",
+    "SARIMAX_Forecast": 1736110.5838119392,
+    "Year": 2022
+  },
+  {
+    "Region": "Region IV-B - MIMAROPA",
+    "SARIMAX_Forecast": 1724973.6794262594,
+    "Year": 2023
+  },
+  {
+    "Region": "Region IV-B - MIMAROPA",
+    "SARIMAX_Forecast": 1713846.5766736288,
+    "Year": 2024
+  },
+  {
+    "Region": "Region IV-B - MIMAROPA",
+    "SARIMAX_Forecast": 1702727.002118251,
+    "Year": 2025
+  },
+  {
+    "Region": "V - Bicol Region",
+    "SARIMAX_Forecast": 1076517.035403613,
+    "Year": 2021
+  },
+  {
+    "Region": "V - Bicol Region",
+    "SARIMAX_Forecast": 1074642.095811944,
+    "Year": 2022
+  },
+  {
+    "Region": "V - Bicol Region",
+    "SARIMAX_Forecast": 1072766.9324326317,
+    "Year": 2023
+  },
+  {
+    "Region": "V - Bicol Region",
+    "SARIMAX_Forecast": 1070891.6644543998,
+    "Year": 2024
+  },
+  {
+    "Region": "V - Bicol Region",
+    "SARIMAX_Forecast": 1069016.3475863636,
+    "Year": 2025
+  },
+  {
+    "Region": "VI - Western Visayas",
+    "SARIMAX_Forecast": 734201.5216067058,
+    "Year": 2021
+  },
+  {
+    "Region": "VI - Western Visayas",
+    "SARIMAX_Forecast": 732662.059189455,
+    "Year": 2022
+  },
+  {
+    "Region": "VI - Western Visayas",
+    "SARIMAX_Forecast": 731122.5815074733,
+    "Year": 2023
+  },
+  {
+    "Region": "VI - Western Visayas",
+    "SARIMAX_Forecast": 729583.101798697,
+    "Year": 2024
+  },
+  {
+    "Region": "VI - Western Visayas",
+    "SARIMAX_Forecast": 728043.6218208104,
+    "Year": 2025
+  },
+  {
+    "Region": "VII - Central Visayas",
+    "SARIMAX_Forecast": 600734.0819857577,
+    "Year": 2021
+  },
+  {
+    "Region": "VII - Central Visayas",
+    "SARIMAX_Forecast": 599597.8046099672,
+    "Year": 2022
+  },
+  {
+    "Region": "VII - Central Visayas",
+    "SARIMAX_Forecast": 598461.6479624469,
+    "Year": 2023
+  },
+  {
+    "Region": "VII - Central Visayas",
+    "SARIMAX_Forecast": 597325.5756893671,
+    "Year": 2024
+  },
+  {
+    "Region": "VII - Central Visayas",
+    "SARIMAX_Forecast": 596189.5623838033,
+    "Year": 2025
+  },
+  {
+    "Region": "VIII - Eastern Visayas",
+    "SARIMAX_Forecast": 1631284.2998990105,
+    "Year": 2021
+  },
+  {
+    "Region": "VIII - Eastern Visayas",
+    "SARIMAX_Forecast": 1625491.0177316614,
+    "Year": 2022
+  },
+  {
+    "Region": "VIII - Eastern Visayas",
+    "SARIMAX_Forecast": 1619686.4804265588,
+    "Year": 2023
+  },
+  {
+    "Region": "VIII - Eastern Visayas",
+    "SARIMAX_Forecast": 1613891.0242359194,
+    "Year": 2024
+  },
+  {
+    "Region": "VIII - Eastern Visayas",
+    "SARIMAX_Forecast": 1608088.2410234613,
+    "Year": 2025
+  },
+  {
+    "Region": "IX - Zamboanga Peninsula",
+    "SARIMAX_Forecast": 837084.6467622244,
+    "Year": 2021
+  },
+  {
+    "Region": "IX - Zamboanga Peninsula",
+    "SARIMAX_Forecast": 832919.1685925024,
+    "Year": 2022
+  },
+  {
+    "Region": "IX - Zamboanga Peninsula",
+    "SARIMAX_Forecast": 828760.6767361115,
+    "Year": 2023
+  },
+  {
+    "Region": "IX - Zamboanga Peninsula",
+    "SARIMAX_Forecast": 824606.8581331798,
+    "Year": 2024
+  },
+  {
+    "Region": "IX - Zamboanga Peninsula",
+    "SARIMAX_Forecast": 820456.1655420457,
+    "Year": 2025
+  },
+  {
+    "Region": "X - Northern Mindanao",
+    "SARIMAX_Forecast": 1028113.0759203631,
+    "Year": 2021
+  },
+  {
+    "Region": "X - Northern Mindanao",
+    "SARIMAX_Forecast": 1026170.3856379087,
+    "Year": 2022
+  },
+  {
+    "Region": "X - Northern Mindanao",
+    "SARIMAX_Forecast": 1024229.5503916184,
+    "Year": 2023
+  },
+  {
+    "Region": "X - Northern Mindanao",
+    "SARIMAX_Forecast": 1022290.0484630023,
+    "Year": 2024
+  },
+  {
+    "Region": "X - Northern Mindanao",
+    "SARIMAX_Forecast": 1020351.5048639623,
+    "Year": 2025
+  },
+  {
+    "Region": "XI - Davao Region",
+    "SARIMAX_Forecast": 989848.9311721663,
+    "Year": 2021
+  },
+  {
+    "Region": "XI - Davao Region",
+    "SARIMAX_Forecast": 986428.4343307039,
+    "Year": 2022
+  },
+  {
+    "Region": "XI - Davao Region",
+    "SARIMAX_Forecast": 983016.2089567462,
+    "Year": 2023
+  },
+  {
+    "Region": "XI - Davao Region",
+    "SARIMAX_Forecast": 979609.7223921098,
+    "Year": 2024
+  },
+  {
+    "Region": "XI - Davao Region",
+    "SARIMAX_Forecast": 976207.2174585933,
+    "Year": 2025
+  },
+  {
+    "Region": "XII - SOCCSKSARGEN",
+    "SARIMAX_Forecast": 639988.7520116413,
+    "Year": 2021
+  },
+  {
+    "Region": "XII - SOCCSKSARGEN",
+    "SARIMAX_Forecast": 637530.1759652017,
+    "Year": 2022
+  },
+  {
+    "Region": "XII - SOCCSKSARGEN",
+    "SARIMAX_Forecast": 635073.4959023718,
+    "Year": 2023
+  },
+  {
+    "Region": "XII - SOCCSKSARGEN",
+    "SARIMAX_Forecast": 632618.2158975964,
+    "Year": 2024
+  },
+  {
+    "Region": "XII - SOCCSKSARGEN",
+    "SARIMAX_Forecast": 630163.969742769,
+    "Year": 2025
+  },
+  {
+    "Region": "XIII - Caraga Region",
+    "SARIMAX_Forecast": 1429566.3404822191,
+    "Year": 2021
+  },
+  {
+    "Region": "XIII - Caraga Region",
+    "SARIMAX_Forecast": 1420487.6435367994,
+    "Year": 2022
+  },
+  {
+    "Region": "XIII - Caraga Region",
+    "SARIMAX_Forecast": 1411419.8437857404,
+    "Year": 2023
+  },
+  {
+    "Region": "XIII - Caraga Region",
+    "SARIMAX_Forecast": 1402360.0948608387,
+    "Year": 2024
+  },
+  {
+    "Region": "XIII - Caraga Region",
+    "SARIMAX_Forecast": 1393306.2938707606,
+    "Year": 2025
+  },
+  {
+    "Region": "BARMM",
+    "SARIMAX_Forecast": 790965.4305721613,
+    "Year": 2021
+  },
+  {
+    "Region": "BARMM",
+    "SARIMAX_Forecast": 789137.4417520065,
+    "Year": 2022
+  },
+  {
+    "Region": "BARMM",
+    "SARIMAX_Forecast": 787309.6197345159,
+    "Year": 2023
+  },
+  {
+    "Region": "BARMM",
+    "SARIMAX_Forecast": 785481.8697047501,
+    "Year": 2024
+  },
+  {
+    "Region": "BARMM",
+    "SARIMAX_Forecast": 783654.1507430288,
+    "Year": 2025
+  }
+]
