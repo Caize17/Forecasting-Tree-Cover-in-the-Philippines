@@ -20,7 +20,7 @@ agri = pd.read_csv("agriculture_ha.csv")
 log = pd.read_csv("log_production.csv")
 urban = pd.read_csv("urbanization_percentage.csv")
 roads = pd.read_csv("national_roads.csv")
-actual_tree = pd.read_csv("actual_tree_cover.csv")  # 2021-2024
+actual_tree = pd.read_csv("Actual_Tree_Cover.csv")  # 2021-2024
 
 if "Region" not in roads.columns:
     all_regions = tree["Region"].unique()
